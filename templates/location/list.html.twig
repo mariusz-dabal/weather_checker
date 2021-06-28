@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Locations</h1>
+
+<ul>
+    {% for location in locations %}
+        <li>{{ location.country }} {{ location.city }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
