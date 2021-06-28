@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Weather Checker!{% endblock %}
+
+{% block body %}
+    <h1>Check the weather</h1>
+
+    {{ form_start(locationForm)}}
+        {{ form_widget(locationForm) }}
+
+        <button type="submit" class="btn btn-primary">Search</button>
+    {{ form_end(locationForm)}}
+
+{% endblock %}
