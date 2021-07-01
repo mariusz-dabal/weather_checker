@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
+    <div class="container w-50 pt-5">
         <h1>Check the weather</h1>
 
         {{ form_start(locationForm)}}
@@ -9,5 +9,15 @@
 
             <button type="submit" class="btn btn-primary">Search</button>
         {{ form_end(locationForm)}}
+
+        {% if weather is defined %}
+            <div class="card mt-5">
+                <div class="card-body mx-auto">
+                    <h5 class="card-title">Weather for today: </h5>
+                    <span class="badge bg-primary">{{ weather.temperature }} &#176;C</span>
+                    <span class="badge bg-success">{{ weather.description }} </span>
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

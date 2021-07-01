@@ -28,9 +28,9 @@ class Weather
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Location::class, inversedBy="weather")
+     * @ORM\Column(type="string", length=255)
      */
-    private $location;
+    private $city;
 
     /**
      * @ORM\Column(type="datetime_immutable")
@@ -66,14 +66,14 @@ class Weather
         return $this;
     }
 
-    public function getLocation(): ?Location
+    public function getCity(): ?string
     {
-        return $this->location;
+        return $this->city;
     }
 
-    public function setLocation(?Location $location): self
+    public function setCity(string $city): self
     {
-        $this->location = $location;
+        $this->city = $city;
 
         return $this;
     }
